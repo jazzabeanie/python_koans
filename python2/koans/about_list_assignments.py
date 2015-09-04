@@ -9,23 +9,23 @@ from runner.koan import *
 
 
 class AboutListAssignments(Koan):
-    def test_non_parallel_assignment(self):
+    def test_non_parallel_assignment(self): # nothing new here
         names = ["John", "Smith"]
-        self.assertEqual(__, names)
+        self.assertEqual(["John", "Smith"], names)
 
-    def test_parallel_assignments(self):
+    def test_parallel_assignments(self): # it looks like you can assign multiple variables in one line.
         first_name, last_name = ["John", "Smith"]
-        self.assertEqual(__, first_name)
-        self.assertEqual(__, last_name)
+        self.assertEqual("John", first_name)
+        self.assertEqual("Smith", last_name)
 
-    def test_parallel_assignments_with_sublists(self):
+    def test_parallel_assignments_with_sublists(self): # lists can exist inside other lists.
         first_name, last_name = [["Willie", "Rae"], "Johnson"]
-        self.assertEqual(__, first_name)
-        self.assertEqual(__, last_name)
+        self.assertEqual(["Willie", "Rae"], first_name)
+        self.assertEqual("Johnson", last_name)
 
-    def test_swapping_with_parallel_assignment(self):
+    def test_swapping_with_parallel_assignment(self): # multiple variables can be swapped in one line. No surprises here.
         first_name = "Roy"
         last_name = "Rob"
         first_name, last_name = last_name, first_name
-        self.assertEqual(__, first_name)
-        self.assertEqual(__, last_name)
+        self.assertEqual("Rob", first_name)
+        self.assertEqual("Roy", last_name)
