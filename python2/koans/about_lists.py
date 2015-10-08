@@ -22,7 +22,7 @@ class AboutLists(Koan): # Koan is the parent class that AboutLists is a child of
         #    self.assertEqual([1], nums)
         #except Exception:
         #    print "this no work because I smart and you stupid, and nums is an empty list"
-        nums[0:] = [1] # lets the 0 position of the list equal 1
+        nums[0:] = [1] # lets the 0 position of the list equal 1. #is this only because numbs is emptpy? could you do something like nums[0:] = [1, 2]??
         self.assertEqual([1], nums) #check the content of nums
 
         nums[1:] = [2] # lets the 1 position (or the second position) of numbs be 2.
@@ -112,7 +112,7 @@ class AboutLists(Koan): # Koan is the parent class that AboutLists is a child of
         
         testlist = list(queue)
 
-        popped_value = queue.popleft() # removed the left most value and stores it to popped_value. normall lists don't support popleft().        
+        popped_value = queue.popleft() # removed the left most value and stores it to popped_value. normall lists don't support popleft(). Can we not do popped_value = list.pop(0)??
         self.assertEqual(1, popped_value)
         self.assertEqual([2, 'last'], list(queue))
         

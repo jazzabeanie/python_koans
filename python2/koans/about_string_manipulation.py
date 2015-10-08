@@ -48,7 +48,7 @@ class AboutStringManipulation(Koan): # Koan refers to some object of which About
         import re  # import python regular expression library
 
         string = "the,rain;in,spain"
-        pattern = re.compile(',|;') # re is regular expresssion. compile is a function that takes the patter in the argument, and converts it in to an object which have methods attached to them such as serach and replace. See here for more info: https://docs.python.org/2/howto/regex.html#compiling-regular-expressions. | splits the regular expression into two and either can be matched. So this says, patern is equal to , or ;.
+        pattern = re.compile(',|;') # re is regular expresssion. compile is a function that takes the patter in the argument, and converts it in to an object which have methods attached to them such as serach and replace. See here for more info: https://docs.python.org/2/howto/regex.html#compiling-regular-expressions. | splits the regular expression into two and either can be matched. So this says, patern is equal to , or ;. #Could this have used [,;] intead??
         words = pattern.split(string) # I thought split() was a re module function, but it is used in test_strings_can_be_split(self) method before re is imported.
 
         self.assertEqual(["the", 'rain', 'in', 'spain'], words)

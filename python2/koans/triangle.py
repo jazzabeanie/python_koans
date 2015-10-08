@@ -19,7 +19,19 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    if (a<=0 or b<=0 or c<=0):
+        raise TriangleError, "Triangles must have sides of length greater than zero, silly"
+    elif ((a+b)<c or (b+c)<a or (a+c)<b):
+        raise TriangleError, "Your triangle is physically impossible to construct without having one side curved"
+    elif (a == b == c):
+        return 'equilateral'
+    elif ((a == b != c) or (b == c != a) or (a == c != b)):
+        return 'isosceles'
+    #had to comment out the following code to make it work. How do I do this?? Ideally I want to say if (any variable != int or float)
+    #elif (any(type(a)!=int, type(b)!=int, type(c)!=int)):
+    #    raise self.TriangleError
+    else:
+        return 'scalene'
 
 
 # Error class used in part 2.  No need to change this code.
